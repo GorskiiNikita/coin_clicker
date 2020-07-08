@@ -11,3 +11,14 @@ def is_valid_sign(*, query: dict, secret: str) -> bool:
     hash_code = b64encode(HMAC(secret.encode(), urlencode(vk_subset, doseq=True).encode(), sha256).digest())
     decoded_hash_code = hash_code.decode('utf-8')[:-1].replace('+', '-').replace('/', '_')
     return query.get("sign") == decoded_hash_code
+
+
+
+
+
+
+
+
+
+
+
